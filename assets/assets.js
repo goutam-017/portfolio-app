@@ -1,0 +1,156 @@
+import user_image from './user-image.png';
+import vscode from './vscode.png';
+import firebase from './firebase.png';
+import figma from './figma.png';
+import git from './git.png';
+import github from './github.png';
+import mongodb from './mongodb.png';
+import right_arrow_white from './right-arrow-white.png';
+import profile_img from './profile-img.png';
+import download_icon from './download-icon.png';
+import hand_icon from './hand-icon.gif';
+import header_bg_color from './header-bg-color.png';
+import menu_black from './menu-black.png';
+import close_black from './close-black.png';
+import htmlLogo from './html.png';
+import cssLogo from './css.png';
+import javascriptLogo from './javascript.png';
+import reactjsLogo from './reactjs.png';
+import nextjsLogo from './nextjs.png';
+import tailwindcssLogo from './tailwindcss.png';
+import nodejsLogo from './nodejs.png';
+import expressjsLogo from './express.png';
+import pythonLogo from './python.png';
+import netlifyLogo from './netlify.png';
+import vercelLogo from './vercel.png';
+import doctorpluslogo from './doctorpluslogo.png'
+import eduverselogo from './eduverselogo.png'
+import weatherapp from './weatherapp.png'
+
+
+
+export const assets = {
+    cssLogo,
+    netlifyLogo,
+    vercelLogo,
+    javascriptLogo,
+    reactjsLogo,
+    nextjsLogo,
+    tailwindcssLogo,
+    nodejsLogo,
+    expressjsLogo,
+    pythonLogo,
+    user_image,
+    vscode,
+    firebase,
+    figma,
+    git,
+    mongodb,
+    right_arrow_white,
+    profile_img,
+    download_icon,
+    hand_icon,
+    header_bg_color,
+    menu_black,
+    close_black,
+    htmlLogo,
+    doctorpluslogo,
+    eduverselogo,
+    weatherapp,
+};
+
+
+export const SkillsInfo = [
+  {
+    title: 'Frontend',
+    skills: [
+      { name: 'HTML', logo: htmlLogo },
+      { name: 'CSS', logo: cssLogo },
+      { name: 'JavaScript', logo: javascriptLogo },
+      { name: 'React JS', logo: reactjsLogo },
+      { name: 'Next JS', logo: nextjsLogo },
+      { name: 'Tailwind CSS', logo: tailwindcssLogo },
+    ],
+  },
+  {
+    title: 'Backend',
+    skills: [
+      { name: 'Node JS', logo: nodejsLogo },
+      { name: 'Express JS', logo: expressjsLogo },
+      { name: 'MongoDB', logo: mongodb },
+      { name: 'Firebase', logo: firebase },
+    ],
+  },
+  {
+    title: 'Languages',
+    skills: [
+      { name: 'Python', logo: pythonLogo },
+      { name: 'JavaScript', logo: javascriptLogo },
+    ],
+  },
+  {
+    title: 'Tools',
+    skills: [
+      { name: 'Git', logo: git },
+      { name: 'GitHub', logo: github },
+      { name: 'VS Code', logo: vscode },
+      { name: 'Vercel', logo: vercelLogo },
+      { name: 'Netlify', logo: netlifyLogo },
+      { name: 'Figma', logo: figma },
+    ],
+  },
+];
+
+export const projects = [
+  {
+    id: 0,
+    title: "Doctor Appointment Booking System",
+    description:
+      "A modern and intuitive MERN Stack web application designed to simplify healthcare access by enabling patients to book doctor appointments online with ease. This system provides real-time slot availability, smart doctor search by specialty and location, secure payment options, and multilingual support. Tailored for both patients and doctors, it streamlines appointment management, reduces no-shows, and enhances communication — making it an essential tool for digital healthcare in India.",
+    image: doctorpluslogo,
+    tags: ["React JS", "Node.js", "MongoDB", "Express", "HTML", "CSS", "JavaScript","Tailwind"],
+  },
+  {
+    id: 1,
+    title: "Online course website",
+    description:
+      "A responsive and dynamic web platform designed to offer a wide range of online courses across various subjects and skill levels. Built with modern web technologies, it features interactive video lectures, downloadable resources, progress tracking, and user authentication. Whether for competitive exams or skill development, the platform provides a seamless learning experience powered by real-time data and personalized recommendations.",
+    image: eduverselogo,
+    tags: ["HTML", "CSS", "JavaScript","Firebase","API"],
+  },
+  {
+    id: 2,
+    title: "Weather App",
+    description:
+      "A responsive and user-friendly web application built for delivers real-time weather updates for any city worldwide. It fetches accurate data such as temperature and weather conditions using third-party APIs. With a clean interface and intuitive search functionality, this app is perfect for staying informed about the weather anytime, anywhere.",
+    image: weatherapp,
+    tags: ["HTML", "CSS", "JavaScript","API"],
+  },
+];
+
+export const education = [
+  {
+    id: 0,
+    school: "Trident Academy of Technology, Bhubaneswar, Odisha",
+    date: "Dec 2021 - May 2025",
+    grade: "7.3 CGPA",
+    desc: "I completed my Bachelor's degree in Computer Science and Engineering (B.Tech) from Trident Academy of Technology, Bhubaneswar, Odisha. Throughout my studies, I was immersed in a variety of subjects that deepened my understanding of computing, Programming and technology. From exploring Data Structures and Algorithms to diving into Web Development and Database Management Systems, I gained practical insights into the world of software development.",
+    degree: "Bachelor of Technology - B.Tech",
+  },
+  {
+    id: 1,
+    school: "East Science Higher Secondary School, Bhubaneswar, Odisha ",
+    date: "June 2019 - March 2021",
+    grade: "75.83%",
+    desc: "I completed my class 11th & 12th education from East Science Higher Secondary School, Phulnakhara, Bhubaneswar, Odisha, under the CHSE Odisha board, where I studied Physics, Chemistry, and Mathematics (PCM) with Information Technology.",
+    degree: "CHSE(XI & XII) - PCM with Information Technology",
+  },
+  {
+    id: 2,
+    school: "Saraswati Sishu Vidya Mandir, Nimapara, Odisha",
+    date: "Apr 2018 - March 2019",
+    grade: "72.16%",
+    desc: "I completed my class 10th education from Saraswati Sishu Vidya Mandir, Nimapara, Odisha, under the BSE Odisha board, where I studied Odisha gotv. Syllabus subjects.",
+    degree: "CBSE(X)",
+  },
+];
