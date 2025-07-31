@@ -151,6 +151,6 @@ export const education = [
     date: "Apr 2018 - March 2019",
     grade: "72.16%",
     desc: "I completed my class 10th education from Saraswati Sishu Vidya Mandir, Nimapara, Odisha, under the BSE Odisha board, where I studied Odisha gotv. Syllabus subjects.",
-    degree: "CBSE(X)",
+    degree: "BSE(X)",
   },
 ];
