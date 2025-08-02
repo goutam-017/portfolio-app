@@ -36,7 +36,7 @@ const Header = () => {
                 < motion.a
                     initial={{ y: 30, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 1.2 }} href="/sample-resume.pdf" download className='px-10 py-3 border rounded-full border-gray-500 bg-blue-100 flex items-center gap-2'>My Resume <Image src={assets.download_icon} alt='' className='w-4' /></ motion.a>
+                    transition={{ duration: 0.6, delay: 1.2 }} href="/Goutam Senapati-Resume.pdf" download className='px-10 py-3 border rounded-full border-gray-500 bg-blue-100 flex items-center gap-2'>My Resume <Image src={assets.download_icon} alt='' className='w-4' /></ motion.a>
             </div>
         </div>
     )
