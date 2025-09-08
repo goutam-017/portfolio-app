@@ -30,7 +30,7 @@ const Education = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
-                className="grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center">
+                className="flex flex-wrap gap-1 lg:gap-5 py-10 justify-between">
                 {/* Education Entries */}
                 {education.map((edu) => (
                     <div
@@ -38,7 +38,7 @@ const Education = () => {
                         className="border border-gray-300 bg-blue-50 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden cursor-pointer hover:shadow-blue-200 hover:scale-105 transition-all duration-300 p-6"
                     >
                         {/* Content Section */}
-                        <div className="flex flex-col space-y-1">
+                        <div className="flex flex-col space-y-1 text-center">
                             {/* Degree, School Name, and Date */}
                             <div>
                                 <h3 className="text-xl font-semibold text-black">{edu.degree}</h3>

@@ -137,20 +137,4 @@ export const education = [
     desc: "I completed my Bachelor's degree in Computer Science and Engineering (B.Tech) from Trident Academy of Technology, Bhubaneswar, Odisha. Throughout my studies, I was immersed in a variety of subjects that deepened my understanding of computing, Programming and technology. From exploring Data Structures and Algorithms to diving into Web Development and Database Management Systems, I gained practical insights into the world of software development.",
     degree: "Bachelor of Technology - B.Tech",
   },
-  {
-    id: 1,
-    school: "East Science Higher Secondary School, Bhubaneswar, Odisha ",
-    date: "June 2019 - March 2021",
-    grade: "75.83%",
-    desc: "I completed my class 11th & 12th education from East Science Higher Secondary School, Phulnakhara, Bhubaneswar, Odisha, under the CHSE Odisha board, where I studied Physics, Chemistry, and Mathematics (PCM) with Information Technology.",
-    degree: "CHSE(XI & XII) - PCM with Information Technology",
-  },
-  {
-    id: 2,
-    school: "Saraswati Sishu Vidya Mandir, Nimapara, Odisha",
-    date: "Apr 2018 - March 2019",
-    grade: "72.16%",
-    desc: "I completed my class 10th education from Saraswati Sishu Vidya Mandir, Nimapara, Odisha, under the BSE Odisha board, where I studied Odisha gotv. Syllabus subjects.",
-    degree: "BSE(X)",
-  },
 ];
