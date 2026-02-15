@@ -4,7 +4,7 @@ import firebase from './firebase.png';
 import figma from './figma.png';
 import git from './git.png';
 import github from './github.png';
-import mongodb from './mongodb.png';
+import mysql from './mysql.png';
 import right_arrow_white from './right-arrow-white.png';
 import profile_img from './profile-img.png';
 import download_icon from './download-icon.png';
@@ -45,7 +45,7 @@ export const assets = {
     firebase,
     figma,
     git,
-    mongodb,
+    mysql,
     right_arrow_white,
     profile_img,
     download_icon,
@@ -77,7 +77,7 @@ export const SkillsInfo = [
     skills: [
       { name: 'Django', logo: djangoLogo },
       { name: 'Rest Framework', logo: restLogo },
-      { name: 'MongoDB', logo: mongodb },
+      { name: 'MySQL', logo: mysql },
       { name: 'Firebase', logo: firebase },
     ],
   },
