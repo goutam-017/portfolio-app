@@ -18,7 +18,7 @@ import javascriptLogo from './javascript.png';
 import reactjsLogo from './reactjs.png';
 import nextjsLogo from './nextjs.png';
 import tailwindcssLogo from './tailwindcss.png';
-import nodejsLogo from './nodejs.png';
+import djangoLogo from './django.png';
 import expressjsLogo from './express.png';
 import pythonLogo from './python.png';
 import netlifyLogo from './netlify.png';
@@ -37,7 +37,7 @@ export const assets = {
     reactjsLogo,
     nextjsLogo,
     tailwindcssLogo,
-    nodejsLogo,
+    djangoLogo,
     expressjsLogo,
     pythonLogo,
     user_image,
