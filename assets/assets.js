@@ -19,7 +19,7 @@ import reactjsLogo from './reactjs.png';
 import nextjsLogo from './nextjs.png';
 import tailwindcssLogo from './tailwindcss.png';
 import djangoLogo from './django.png';
-import expressjsLogo from './express.png';
+import restLogo from './rest.png';
 import pythonLogo from './python.png';
 import netlifyLogo from './netlify.png';
 import vercelLogo from './vercel.png';
@@ -38,7 +38,7 @@ export const assets = {
     nextjsLogo,
     tailwindcssLogo,
     djangoLogo,
-    expressjsLogo,
+    restLogo,
     pythonLogo,
     user_image,
     vscode,
