@@ -49,7 +49,7 @@ const About = () => {
                             I specialize in Python Full-Stack web development. I enjoy building responsive, user-friendly, and full-stack web applications.
                         </motion.li>
                         <motion.li whileInView={{ scale: 1.05 }}>
-                            I have experience working with technologies like React.js, Django, Django REST Framework, and Oracle DB, as well as tools like Git and GitHub. I also use Python for backend development, scripting, and solving real-world problems.
+                            I have experience working with technologies like React.js, Django, Django REST Framework,Firebase SQLite3 DB and MySQL DB, as well as tools like Git and GitHub. I also use Python for backend development, scripting, and solving real-world problems.
                         </motion.li>
                         <motion.li whileInView={{ scale: 1.05 }}>
                             I'm always eager to learn new technologies and take on challenges that help me grow as a developer. My goal is to build scalable and efficient software solutions that make a real impact.
