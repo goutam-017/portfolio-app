@@ -43,16 +43,16 @@ const About = () => {
                         <motion.li
                             whileInView={{ scale: 1.05 }}
                         >
-                            I am a highly motivated and enthusiastic Computer Science and Engineering graduate from Trident Academy of Technology, seeking a challenging position as a Software Engineer. Eager to apply my programming skills, problem-solvingabilities, and passion for technology in a dynamic and growth-oriented environment.
+                            I am a passionate Software Engineer currently working at Legacore Infomatics, with a strong foundation in Computer Science and Engineering from Trident Academy of Technology. I enjoy developing efficient, scalable, and user-focused software solutions while continuously improving my technical and problem-solving skills.
                         </motion.li>
                         <motion.li whileInView={{ scale: 1.05 }}>
-                            I specialize in Python Full-Stack web development. I enjoy building responsive, user-friendly, and full-stack web applications.
+                            I specialize in Python Full-Stack web development and enjoy building responsive, modern, and full-stack web applications with clean and maintainable code.
                         </motion.li>
                         <motion.li whileInView={{ scale: 1.05 }}>
-                            I have experience working with technologies like React.js, Django, Django REST Framework,Firebase, SQLite3 DB and MySQL DB, as well as tools like Git and GitHub. I also use Python for backend development, scripting, and solving real-world problems.
+                            I have hands-on experience working with technologies such as React.js, Django, Django REST Framework, Firebase, SQLite3, and MySQL, along with tools like Git and GitHub. I also work with Python for backend development, automation, and solving real-world business problems.
                         </motion.li>
                         <motion.li whileInView={{ scale: 1.05 }}>
-                            I'm always eager to learn new technologies and take on challenges that help me grow as a developer. My goal is to build scalable and efficient software solutions that make a real impact.
+                            As a professional developer, I am always eager to learn new technologies, collaborate with teams, and take on challenging projects that help me grow. My goal is to build impactful, scalable, and high-quality software solutions.
                         </motion.li>
                     </motion.ul>
                 </motion.div>

@@ -23,7 +23,7 @@ const Header = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className='text-3xl sm:text-6xl lg:text-[46px] text-black'>
-                “I’m a passionate and aspiring Software Developer...”
+                “I’m a Software Developer based in Bhubaneswar, passionate about programming and building real-world software solutions.”
             </motion.h2>
             <p className='max-w-2xl mx-auto'>
 
