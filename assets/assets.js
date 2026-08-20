@@ -1,102 +1,98 @@
-import user_image from './user-image.png';
-import vscode from './vscode.png';
-import firebase from './firebase.png';
-import figma from './figma.png';
-import git from './git.png';
-import github from './github.png';
-import mysql from './mysql.png';
-import right_arrow_white from './right-arrow-white.png';
-import profile_img from './profile-img.png';
-import download_icon from './download-icon.png';
-import hand_icon from './hand-icon.gif';
-import header_bg_color from './header-bg-color.png';
-import menu_black from './menu-black.png';
-import close_black from './close-black.png';
-import htmlLogo from './html.png';
-import cssLogo from './css.png';
-import javascriptLogo from './javascript.png';
-import reactjsLogo from './reactjs.png';
-import nextjsLogo from './nextjs.png';
-import tailwindcssLogo from './tailwindcss.png';
-import djangoLogo from './django.png';
-import restLogo from './rest.png';
-import pythonLogo from './python.png';
-import netlifyLogo from './netlify.png';
-import vercelLogo from './vercel.png';
-import doctorpluslogo from './doctorpluslogo.png'
-import eduverselogo from './eduverselogo.png'
-import weatherapp from './weatherapp.png'
-
-
+import user_image from "./user-image.png";
+import git from "./git.png";
+import github from "./github.png";
+import mysql from "./mysql.png";
+import right_arrow_white from "./right-arrow-white.png";
+import profile_img from "./profile-img.png";
+import download_icon from "./download-icon.png";
+import hand_icon from "./hand-icon.gif";
+import header_bg_color from "./header-bg-color.png";
+import menu_black from "./menu-black.png";
+import close_black from "./close-black.png";
+import htmlLogo from "./html.png";
+import cssLogo from "./css.png";
+import javascriptLogo from "./javascript.png";
+import nodejs from './nodejs.png'
+import express from './express.png'
+import reactjsLogo from "./react.svg";
+import nextjsLogo from "./nextjs.png";
+import tailwindcssLogo from "./tailwindcss.png";
+import djangoLogo from "./django.png";
+import restLogo from "./rest.png";
+import pythonLogo from "./python.png";
+import doctorpluslogo from "./doctorpluslogo.png";
+import eduverselogo from "./eduverselogo.png";
+import weatherapp from "./weatherapp.png";
+import mongodb from './mongodb.png'
+import restapi from './restapi.png'
+import postgresql from './postgresql.png'
 
 export const assets = {
-    cssLogo,
-    netlifyLogo,
-    vercelLogo,
-    javascriptLogo,
-    reactjsLogo,
-    nextjsLogo,
-    tailwindcssLogo,
-    djangoLogo,
-    restLogo,
-    pythonLogo,
-    user_image,
-    vscode,
-    firebase,
-    figma,
-    git,
-    mysql,
-    right_arrow_white,
-    profile_img,
-    download_icon,
-    hand_icon,
-    header_bg_color,
-    menu_black,
-    close_black,
-    htmlLogo,
-    doctorpluslogo,
-    eduverselogo,
-    weatherapp,
+  cssLogo,
+  javascriptLogo,
+  reactjsLogo,
+  nextjsLogo,
+  tailwindcssLogo,
+  djangoLogo,
+  restLogo,
+  pythonLogo,
+  user_image,
+  git,
+  mysql,
+  right_arrow_white,
+  profile_img,
+  download_icon,
+  hand_icon,
+  header_bg_color,
+  menu_black,
+  close_black,
+  htmlLogo,
+  doctorpluslogo,
+  eduverselogo,
+  weatherapp,
+  nodejs,
+  express,
+  mongodb,
+  restapi,
+  postgresql
 };
-
 
 export const SkillsInfo = [
   {
-    title: 'Frontend',
+    title: "Languages",
     skills: [
-      { name: 'HTML', logo: htmlLogo },
-      { name: 'CSS', logo: cssLogo },
-      { name: 'JavaScript', logo: javascriptLogo },
-      { name: 'React JS', logo: reactjsLogo },
-      { name: 'Next JS', logo: nextjsLogo },
-      { name: 'Tailwind CSS', logo: tailwindcssLogo },
+      { name: "Python", logo: pythonLogo },
+      { name: "JavaScript", logo: javascriptLogo },
     ],
   },
   {
-    title: 'Backend',
+    title: "Frontend",
     skills: [
-      { name: 'Django', logo: djangoLogo },
-      { name: 'Rest Framework', logo: restLogo },
-      { name: 'MySQL', logo: mysql },
-      { name: 'Firebase', logo: firebase },
+      { name: "HTML", logo: htmlLogo },
+      { name: "CSS", logo: cssLogo },
+      { name: "JavaScript", logo: javascriptLogo },
+      { name: "React JS", logo: reactjsLogo },
+      { name: "Next JS", logo: nextjsLogo },
+      { name: "Tailwind CSS", logo: tailwindcssLogo },
     ],
   },
   {
-    title: 'Languages',
+    title: "Backend",
     skills: [
-      { name: 'Python', logo: pythonLogo },
-      { name: 'JavaScript', logo: javascriptLogo },
+      { name: "Node Js", logo: nodejs },
+      { name: "Express Js", logo: express },
+      { name: "Django", logo: djangoLogo },
+      { name: "MongoDB", logo: mongodb },
+      { name: "MySQL", logo: mysql },
+      { name: "PostgreSQL", logo: postgresql },
     ],
   },
   {
-    title: 'Tools',
+    title: "Tools",
     skills: [
-      { name: 'Git', logo: git },
-      { name: 'GitHub', logo: github },
-      { name: 'VS Code', logo: vscode },
-      { name: 'Vercel', logo: vercelLogo },
-      { name: 'Netlify', logo: netlifyLogo },
-      { name: 'Figma', logo: figma },
+      { name: "Git", logo: git },
+      { name: "GitHub", logo: github },
+      { name: "REST API", logo: restapi }
     ],
   },
 ];
@@ -108,7 +104,16 @@ export const projects = [
     description:
       "A modern and intuitive MERN Stack web application designed to simplify healthcare access by enabling patients to book doctor appointments online with ease. This system provides real-time slot availability, smart doctor search by specialty and location, secure payment options, and multilingual support. Tailored for both patients and doctors, it streamlines appointment management, reduces no-shows, and enhances communication — making it an essential tool for digital healthcare in India.",
     image: doctorpluslogo,
-    tags: ["React JS", "Node.js", "MongoDB", "Express", "HTML", "CSS", "JavaScript","Tailwind"],
+    tags: [
+      "React JS",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind",
+    ],
   },
   {
     id: 1,
@@ -116,7 +121,7 @@ export const projects = [
     description:
       "A responsive and dynamic web platform designed to offer a wide range of online courses across various subjects and skill levels. Built with modern web technologies, it features interactive video lectures, downloadable resources, progress tracking, and user authentication. Whether for competitive exams or skill development, the platform provides a seamless learning experience powered by real-time data and personalized recommendations.",
     image: eduverselogo,
-    tags: ["HTML", "CSS", "JavaScript","Firebase","API"],
+    tags: ["HTML", "CSS", "JavaScript", "Firebase", "API"],
   },
   {
     id: 2,
@@ -124,7 +129,7 @@ export const projects = [
     description:
       "A responsive and user-friendly web application built for delivers real-time weather updates for any city worldwide. It fetches accurate data such as temperature and weather conditions using third-party APIs. With a clean interface and intuitive search functionality, this app is perfect for staying informed about the weather anytime, anywhere.",
     image: weatherapp,
-    tags: ["HTML", "CSS", "JavaScript","API"],
+    tags: ["HTML", "CSS", "JavaScript", "API"],
   },
 ];
 
