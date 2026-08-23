@@ -1,62 +1,96 @@
-import React from 'react'
-import { SkillsInfo } from '@/assets/assets'
-import Image from 'next/image'
-import { motion, scale } from "motion/react"
+import React from "react";
+import { SkillsInfo } from "@/assets/assets";
+import Image from "next/image";
 
 const Skills = () => {
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            id='skills' className="w-full px-[12%] py-10 scroll-mt-20">
-            <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="text-center mb-8">
-                <h2 className="text-3xl sm:text-4xl font-bold text-black">SKILLS</h2>
-                <div className="w-24 h-1 bg-blue-400 mx-auto mt-2"></div>
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.7 }}
-                    className="mt-4 text-lg">
-                    A collection of my technical skills and expertise honed through various projects and experiences
-                </motion.p>
-            </motion.div>
-            {/* Skill Categories */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
-                className="flex flex-wrap gap-1 lg:gap-5 py-10 justify-between">
-                {SkillsInfo.map((category) => (
-                    <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        key={category.title} className="bg-blue-50 backdrop-blur-md px-6 sm:px-10 py-8 sm:py-6 mb-10 w-full sm:w-[48%] rounded-2xl border border-gray-300 shadow-2xl hover:shadow-blue-200 hover:scale-105 transition-all duration-300">
-                        <h3 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4 text-center">
-                            {category.title}
-                        </h3>
+        <section id="skills" className="w-full px-[6%] sm:px-[8%] lg:px-[12%] py-20 scroll-mt-5">
+            {/* ================= HEADER ================= */}
+            <div className="text-center max-w-3xl mx-auto mb-14">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-500 mb-3">
+                    My Expertise
+                </p>
+                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
+                    Technical Skills
+                </h2>
 
-                        {/* Skill Items - 3 per row on larger screens */}
-                        <div>
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
-                                {category.skills.map((skill) => (
-                                    <div key={skill.name} className="flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-700 rounded-3xl py-2 px-2 sm:py-2 sm:px-2 text-center">
-                                        <Image src={skill.logo} alt={`${skill.name} logo`} className="w-6 h-6 sm:w-8 sm:h-8" />
-                                        <span className="text-xs sm:text-sm text-black">
-                                            {skill.name}
-                                        </span>
-                                    </div>
-                                ))}
+                <div className="flex items-center justify-center gap-2 mt-4">
+                    <span className="w-12 h-[2px] bg-blue-400 rounded-full"></span>
+                    <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <span className="w-12 h-[2px] bg-blue-400 rounded-full"></span>
+                </div>
+
+                <p className="mt-5 text-gray-500 text-base sm:text-lg leading-relaxed">
+                    Technologies and tools I use to build scalable, modern and reliable applications.
+                </p>
+            </div>
+
+            {/* ================= SKILLS ================= */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {SkillsInfo.map((category, index) => (
+                    <div
+                        key={category.title}
+                        className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 sm:p-7 shadow-sm"
+                    >
+                        {/* Subtle Background Decoration */}
+                        <div className="absolute -right-16 -top-16 w-40 h-40 rounded-full bg-blue-50 blur-3xl" />
+
+                        {/* Category Header */}
+                        <div className="relative flex items-center gap-4 mb-6">
+                            <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 text-white font-bold shadow-md shadow-blue-200">
+                                {String(index + 1).padStart(2, "0")}
+                            </div>
+
+                            <div>
+                                <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                                    {category.title}
+                                </h3>
+
+                                <div className="mt-1 w-10 h-[2px] bg-blue-500 rounded-full" />
                             </div>
                         </div>
-                    </motion.div>
-                ))}
-            </motion.div>
-        </motion.div>
-    )
-}
 
-export default Skills
+                        {/* Skills */}
+                        <div className="relative flex flex-wrap gap-3">
+                            {category.skills.map((skill) => (
+                                <div
+                                    key={skill.name}
+                                    className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-gray-100 border border-gray-200 text-gray-700"
+                                >
+                                    {/* Logo */}
+                                    <div className="flex items-center justify-center w-7 h-7">
+                                        <Image
+                                            src={skill.logo}
+                                            alt={`${skill.name} logo`}
+                                            width={20}
+                                            height={20}
+                                            className="object-contain"
+                                        />
+                                    </div>
+
+                                    <span className="text-sm font-medium whitespace-nowrap">
+                                        {skill.name}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* ================= BOTTOM ================= */}
+            <div className="mt-12 flex justify-center">
+                <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-gray-200 bg-gray-50 text-sm text-gray-500">
+                    <span className="relative flex h-2.5 w-2.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                    </span>
+
+                    Always learning & exploring new technologies
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Skills;

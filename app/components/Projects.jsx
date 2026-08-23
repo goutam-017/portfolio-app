@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { projects } from '@/assets/assets'
-import Image from 'next/image';
-import { motion, scale } from "motion/react"
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { projects } from "@/assets/assets";
+import Image from "next/image";
 
 const Projects = () => {
-
-    const [selectedProject, setSelectedProject] = useState(null)
+    const [selectedProject, setSelectedProject] = useState(null);
 
     const handleOpenModal = (project) => {
         setSelectedProject(project);
@@ -15,49 +15,107 @@ const Projects = () => {
         setSelectedProject(null);
     };
 
+    // Lock background scrolling when modal is open
+    useEffect(() => {
+        if (selectedProject) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [selectedProject]);
+
+    // Close modal with Escape key
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                handleCloseModal();
+            }
+        };
+
+        if (selectedProject) {
+            document.addEventListener("keydown", handleKeyDown);
+        }
+
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [selectedProject]);
+
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            id='projects' className="w-full px-[12%] py-10 scroll-mt-20 relative">
-            <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="text-center mb-16">
-                <h2 className="text-4xl font-bold text-black">PROJECTS</h2>
-                <div className="w-32 h-1 bg-blue-400 mx-auto mt-4"></div>
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.7 }}
-                    className="mt-4 text-lg">
-                    A showcase of the projects I have self worked on, highlighting my skills and experience in various technologies
-                </motion.p>
-            </motion.div>
+        <section
+            id="projects"
+            className="w-full px-[6%] sm:px-[8%] lg:px-[12%] py-20 scroll-mt-5 relative"
+        >
+            {/* ================= HEADER ================= */}
+            <div className="text-center max-w-3xl mx-auto mb-14">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-500 mb-3">
+                    My Work
+                </p>
 
+                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
+                    Projects
+                </h2>
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
-                className="grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                {projects.map((project) => (
-                    <div key={project.id} onClick={() => handleOpenModal(project)} className="border border-gray-300 bg-blue-50 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden cursor-pointer hover:shadow-blue-200 hover:scale-105 transition-all duration-300">
-                        <div className="p-4">
-                            <Image src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-xl" />
+                <div className="flex items-center justify-center gap-2 mt-4">
+                    <span className="w-12 h-[2px] bg-blue-400 rounded-full" />
+                    <span className="w-2 h-2 rounded-full bg-blue-500" />
+                    <span className="w-12 h-[2px] bg-blue-400 rounded-full" />
+                </div>
+
+                <p className="mt-5 text-gray-500 text-base sm:text-lg leading-relaxed">
+                    A collection of projects I have worked on, showcasing my
+                    skills, experience, and problem-solving abilities across
+                    different technologies.
+                </p>
+            </div>
+
+            {/* ================= PROJECT GRID ================= */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                {projects.map((project, index) => (
+                    <div
+                        key={project.id}
+                        onClick={() => handleOpenModal(project)}
+                        className="relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm cursor-pointer"
+                    >
+                        {/* Project Number */}
+                        <div className="absolute top-5 left-5 z-10 flex items-center justify-center w-9 h-9 rounded-lg bg-white/95 border border-gray-200 text-xs font-bold text-gray-700 shadow-sm">
+                            {String(index + 1).padStart(2, "0")}
                         </div>
-                        <div className="p-6">
-                            <h3 className="text-2xl font-bold text-black mb-2">
+
+                        {/* Image */}
+                        <div className="p-4">
+                            <div className="overflow-hidden rounded-xl bg-gray-100 border border-gray-100">
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    width={800}
+                                    height={500}
+                                    className="w-full h-52 object-cover"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Content */}
+                        <div className="px-6 pb-6">
+                            <h3 className="text-xl font-bold text-gray-900 mb-3">
                                 {project.title}
                             </h3>
-                            <p className="text-gray-500 mb-4 pt-4 line-clamp-3">
+
+                            <p className="text-sm text-gray-500 leading-relaxed line-clamp-3 mb-5">
                                 {project.description}
                             </p>
-                            <div className="mb-4">
+
+                            {/* Tags */}
+                            <div className="flex flex-wrap gap-2">
                                 {project.tags.map((tag, index) => (
-                                    <span key={index} className="inline-block bg-white text-xs font-semibold text-gray-900 rounded-full px-2 py-1 mr-2 mb-2 border-1 border-black">
+                                    <span
+                                        key={index}
+                                        className="px-3 py-1.5 rounded-full bg-gray-50 border border-gray-200 text-xs font-medium text-gray-700"
+                                    >
                                         {tag}
                                     </span>
                                 ))}
@@ -65,43 +123,84 @@ const Projects = () => {
                         </div>
                     </div>
                 ))}
-            </motion.div>
+            </div>
 
-            {/* Modal Container */}
+            {/* ================= MODAL ================= */}
             {selectedProject && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-10 p-4">
-                    <div className="bg-blue-50 rounded-xl shadow-2xl lg:w-full w-[90%] max-w-3xl overflow-hidden relative">
-                        <div className="flex justify-end p-4">
-                            <button onClick={handleCloseModal} className="text-black text-3xl font-bold hover:text-red-600">
-                                &times;
-                            </button>
-                        </div>
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 overscroll-none"
+                    onClick={handleCloseModal}
+                >
+                    {/* ================= MODAL CONTAINER ================= */}
+                    <div className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl bg-white shadow-2xl overflow-hidden" onClick={(event) => event.stopPropagation()}>
+                        {/* ================= CLOSE BUTTON ================= */}
+                        <button
+                            onClick={handleCloseModal}
+                            className="absolute right-5 top-5 z-50 flex items-center justify-center w-7 h-7 rounded-full bg-white border border-gray-200 text-red-500 text-3xl shadow-md cursor-pointer"
+                            aria-label="Close project"
+                        >
+                            &times;
+                        </button>
 
-                        <div className="flex flex-col">
-                            <div className="w-full flex justify-center bg-blue-50 px-4">
-                                <Image src={selectedProject.image} alt={selectedProject.title} className="lg:w-full w-[95%] object-contain rounded-xl shadow-2xl" />
+                        {/* ================= SCROLLABLE CONTENT ================= */}
+                        <div className="modal-scroll max-h-[90vh] overflow-y-auto overscroll-contain">
+                            {/* Modal Image */}
+                            <div className="p-5 sm:p-7">
+                                <div className="rounded-xl overflow-hidden bg-gray-100 border border-gray-200">
+                                    <Image
+                                        src={selectedProject.image}
+                                        alt={selectedProject.title}
+                                        width={1200}
+                                        height={700}
+                                        className="w-full max-h-[500px] object-contain"
+                                    />
+                                </div>
                             </div>
-                            <div className="lg:p-8 p-6">
-                                <h3 className="lg:text-3xl font-bold text-black mb-4 text-md">
-                                    {selectedProject.title}
-                                </h3>
-                                <p className="text-gray-500 mb-6 lg:text-base text-xs">
+
+                            {/* Modal Content */}
+                            <div className="px-6 pb-8 sm:px-8 sm:pb-10">
+                                <div className="mb-5">
+                                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-2">
+                                        Project
+                                    </p>
+
+                                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                                        {selectedProject.title}
+                                    </h3>
+                                </div>
+
+                                <p className="text-gray-500 text-sm sm:text-base leading-7 mb-7">
                                     {selectedProject.description}
                                 </p>
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {selectedProject.tags.map((tag, index) => (
-                                        <span key={index} className="bg-white text-xs font-semibold text-black rounded-full px-2 py-1 border-1 border-black">
-                                            {tag}
-                                        </span>
-                                    ))}
+
+                                {/* Technologies */}
+                                <div>
+                                    <h4 className="text-sm font-semibold text-gray-900 mb-3">
+                                        Technologies Used
+                                    </h4>
+
+                                    <div className="flex flex-wrap gap-2">
+                                        {selectedProject.tags.map(
+                                            (tag, index) => (
+                                                <span
+                                                    key={index}
+                                                    className="px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs sm:text-sm font-medium text-blue-700"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            )
+                                        )}
+                                    </div>
                                 </div>
+
+                                <div className="h-4" />
                             </div>
                         </div>
                     </div>
                 </div>
             )}
-        </motion.div>
-    )
-}
+        </section>
+    );
+};
 
-export default Projects
+export default Projects;

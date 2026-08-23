@@ -7,9 +7,10 @@ const Header = () => {
     return (
         <div id='home' className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4'>
             <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.8, type: 'spring', stiffness: 100 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
             >
                 <Image src={assets.profile_img} alt='' className='rounded-full border-2 border-blue-400 w-40' />
             </motion.div >

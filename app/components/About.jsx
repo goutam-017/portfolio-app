@@ -1,64 +1,163 @@
-import { assets } from '@/assets/assets'
-import Image from 'next/image'
-import React from 'react'
-import { motion, scale } from "motion/react"
+import { assets } from "@/assets/assets";
+import Image from "next/image";
+import React from "react";
+import { motion } from "motion/react";
 
 const About = () => {
     return (
-        <motion.div id='about' className='w-full px-[12%] py-10 scroll-mt-20'
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+        <section
+            id="about"
+            className="w-full px-[6%] sm:px-[8%] lg:px-[12%] py-20 scroll-mt-5"
         >
-            <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="text-center mb-6">
-                <h2 className="text-3xl sm:text-4xl font-bold text-black">ABOUT ME</h2>
-                <div className="w-24 h-1 bg-blue-400 mx-auto mt-2"></div>
-            </motion.div>
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                className='flex w-full flex-col lg:flex-row items-center gap-20 my-20'>
-                <motion.div
-                    initial={{ x: -100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 1.1 }}
-                    className='w-64 sm:w-80 rounded-3xl max-w-none'>
-                    <Image src={assets.user_image} alt='user' className='w-full rounded-3xl' />
-                </motion.div>
-                <motion.div
-                    initial={{ x: 100, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 1.1 }}
-                    className='flex-1'>
-                    <motion.ul
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 1 }}
-                        className='list-disc list-inside space-y-3 text-xl text-gray-500'>
-                        <motion.li
-                            whileInView={{ scale: 1.05 }}
-                        >
-                            I am a passionate Software Engineer currently working at Legacore Infomatics, with a strong foundation in Computer Science and Engineering from Trident Academy of Technology. I enjoy developing efficient, scalable, and user-focused software solutions while continuously improving my technical and problem-solving skills.
-                        </motion.li>
-                        <motion.li whileInView={{ scale: 1.05 }}>
-                            I specialize in Python Full-Stack web development and enjoy building responsive, modern, and full-stack web applications with clean and maintainable code.
-                        </motion.li>
-                        <motion.li whileInView={{ scale: 1.05 }}>
-                            I have hands-on experience working with technologies such as React.js, Django, Django REST Framework, Firebase, SQLite3, and MySQL, along with tools like Git and GitHub. I also work with Python for backend development, automation, and solving real-world business problems.
-                        </motion.li>
-                        <motion.li whileInView={{ scale: 1.05 }}>
-                            As a professional developer, I am always eager to learn new technologies, collaborate with teams, and take on challenging projects that help me grow. My goal is to build impactful, scalable, and high-quality software solutions.
-                        </motion.li>
-                    </motion.ul>
-                </motion.div>
-            </motion.div>
-        </motion.div>
-    )
-}
+            {/* ================= HEADER ================= */}
+            <div className="text-center max-w-3xl mx-auto mb-14">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-500 mb-3">
+                    Get To Know Me
+                </p>
 
-export default About
+                <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900">
+                    About Me
+                </h2>
+
+                <div className="flex items-center justify-center gap-2 mt-4">
+                    <span className="w-12 h-[2px] bg-blue-400 rounded-full"></span>
+                    <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <span className="w-12 h-[2px] bg-blue-400 rounded-full"></span>
+                </div>
+            </div>
+
+            {/* ================= CONTENT ================= */}
+            <div className="flex w-full flex-col lg:flex-row items-center gap-12 lg:gap-20">
+
+                {/* ================= IMAGE ================= */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="relative w-64 sm:w-80 shrink-0"
+                >
+                    {/* Background Decoration */}
+                    <div className="absolute -inset-3 rounded-[2rem] border border-blue-100 -z-10"></div>
+
+                    <div className="rounded-[2rem] overflow-hidden bg-gray-100 border border-gray-200 shadow-lg">
+                        <Image
+                            src={assets.user_image}
+                            alt="Goutam Senapati"
+                            width={400}
+                            height={500}
+                            className="w-full h-auto object-cover"
+                        />
+                    </div>
+                </motion.div>
+
+                {/* ================= TEXT ================= */}
+                <div className="flex-1 max-w-3xl">
+                    <div className="space-y-5">
+
+                        {/* About Intro */}
+                        <p className="text-lg sm:text-xl leading-relaxed text-gray-600">
+                            I am a{" "}
+                            <span className="font-semibold text-gray-900">
+                                Full Stack Developer
+                            </span>{" "}
+                            focused on building practical, scalable, and
+                            user-friendly web applications.
+                        </p>
+
+                        {/* Experience */}
+                        <div className="flex gap-4">
+                            <div className="mt-2 w-2 h-2 shrink-0 rounded-full bg-blue-500"></div>
+
+                            <p className="text-base sm:text-lg leading-7 text-gray-500">
+                                Full Stack Developer with 4 months of
+                                professional experience as a Software Developer
+                                Trainee, focused on building practical and
+                                scalable web applications.
+                            </p>
+                        </div>
+
+                        {/* Technologies */}
+                        <div className="flex gap-4">
+                            <div className="mt-2 w-2 h-2 shrink-0 rounded-full bg-blue-500"></div>
+
+                            <p className="text-base sm:text-lg leading-7 text-gray-500">
+                                Skilled in{" "}
+                                <span className="font-medium text-gray-700">
+                                    Python Full-Stack & MERN Stack Development
+                                </span>
+                                , with experience in Django, Django REST
+                                Framework, React.js, Next.js, Node.js,
+                                Express.js, MongoDB, MySQL, PostgreSQL, and
+                                Prisma ORM.
+                            </p>
+                        </div>
+
+                        {/* Backend / Data */}
+                        <div className="flex gap-4">
+                            <div className="mt-2 w-2 h-2 shrink-0 rounded-full bg-blue-500"></div>
+
+                            <p className="text-base sm:text-lg leading-7 text-gray-500">
+                                Experienced in REST API development, web
+                                scraping, LLM integration, PDF/OCR processing,
+                                and data extraction using Python.
+                            </p>
+                        </div>
+
+                        {/* Passion */}
+                        <div className="flex gap-4">
+                            <div className="mt-2 w-2 h-2 shrink-0 rounded-full bg-blue-500"></div>
+
+                            <p className="text-base sm:text-lg leading-7 text-gray-500">
+                                Passionate about problem-solving, learning new
+                                technologies, and developing clean, scalable
+                                software solutions.
+                            </p>
+                        </div>
+
+                        {/* Career Goal */}
+                        <div className="flex gap-4">
+                            <div className="mt-2 w-2 h-2 shrink-0 rounded-full bg-blue-500"></div>
+
+                            <p className="text-base sm:text-lg leading-7 text-gray-500">
+                                Currently looking for opportunities where I can
+                                apply my skills, contribute to real-world
+                                projects, and continue growing as a{" "}
+                                <span className="font-semibold text-gray-700">
+                                    Full Stack Developer
+                                </span>
+                                .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* ================= QUICK INFO ================= */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-14 max-w-4xl mx-auto">
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 text-center">
+                    <p className="text-2xl font-bold text-gray-900">4+</p>
+                    <p className="text-sm text-gray-500 mt-1">
+                        Months Experience
+                    </p>
+                </div>
+
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 text-center">
+                    <p className="text-2xl font-bold text-gray-900">Full Stack</p>
+                    <p className="text-sm text-gray-500 mt-1">
+                        Development
+                    </p>
+                </div>
+
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 text-center">
+                    <p className="text-2xl font-bold text-gray-900">Always</p>
+                    <p className="text-sm text-gray-500 mt-1">
+                        Learning & Building
+                    </p>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default About;
