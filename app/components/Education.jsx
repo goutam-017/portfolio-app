@@ -30,89 +30,32 @@ const Education = () => {
 
                 {/* Timeline Line */}
                 <div
-                    className="
-                        absolute
-                        left-[15px]
-                        sm:left-1/2
-                        top-0
-                        bottom-0
-                        w-[2px]
-                        bg-gray-200
-                        sm:-translate-x-1/2
-                    "
-                />
+                    className="absolute left-[15px] sm:left-1/2 top-0 bottom-0 w-[2px] bg-gray-200 sm:-translate-x-1/2" />
 
                 {education.map((edu, index) => {
                     const isEven = index % 2 === 0;
 
                     return (
-                        <div
-                            key={edu.id}
-                            className="
-                                relative
-                                grid
-                                grid-cols-[32px_1fr]
-                                sm:grid-cols-2
-                                items-start
-                                mb-14
-                                sm:mb-20
-                                last:mb-0
-                            "
-                        >
+                        <div key={edu.id} className="relative grid grid-cols-[32px_1fr] sm:grid-cols-2 items-start mb-14 sm:mb-20 last:mb-0">
                             {/* ================= TIMELINE DOT ================= */}
-                            <div
-                                className="
-                                    absolute
-                                    left-0
-                                    sm:left-1/2
-                                    -translate-x-0
-                                    sm:-translate-x-1/2
-                                    top-1
-                                    z-10
-                                "
-                            >
-                                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white border-4 border-blue-500 shadow-sm" />
+                            <div className="absolute left-0 sm:left-1/2 -translate-x-0 sm:-translate-x-1/2 top-0 z-10">
+                                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white border-4 border-blue-500 shadow-sm flex items-center justify-center">
+                                    <span className="text-[10px] sm:text-xs font-bold text-blue-600">
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
+                                </div>
                             </div>
 
                             {/* ================= DESKTOP DATE ================= */}
-                            <div
-                                className={`
-                                    hidden
-                                    sm:flex
-                                    items-center
-                                    w-full
-                                    ${isEven
-                                        ? "justify-end pr-14"
-                                        : "order-2 justify-start pl-14"
-                                    }
-                                `}
-                            >
+                            <div className={`hidden sm:flex items-center w-full ${isEven ? "justify-end pr-14" : "order-2 justify-start pl-14"}`}>
                                 <span className="text-sm font-semibold text-blue-600">
                                     {edu.date}
                                 </span>
                             </div>
 
                             {/* ================= CONTENT ================= */}
-                            <div
-                                className={`
-                                    col-start-2
-                                    sm:col-auto
-                                    w-full
-                                    ${isEven
-                                        ? "sm:pl-14"
-                                        : "sm:order-1 sm:pr-14"
-                                    }
-                                `}
-                            >
+                            <div className={`col-start-2 sm:col-auto w-full ${isEven ? "sm:pl-14" : "sm:order-1 sm:pr-14"}`}>
                                 <div className="max-w-xl">
-
-                                    {/* Label */}
-                                    <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.15em] text-gray-400 mb-2">
-                                        {String(index + 1).padStart(2, "0")}{" "}
-                                        <span className="mx-1">•</span>{" "}
-                                        Education
-                                    </p>
-
                                     {/* Degree */}
                                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 leading-snug">
                                         {edu.degree}
